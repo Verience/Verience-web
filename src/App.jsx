@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
+import Testimonials from './pages/Testimonials';
 
 function App() {
   // Initialize Lenis smooth scroll
@@ -49,6 +50,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
