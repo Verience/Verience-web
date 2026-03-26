@@ -26,8 +26,8 @@ export default function Contact() {
                 <a href="mailto:nextshitftsolutions@gmail.com" className="text-2xl font-bold hover:text-[var(--primary)] transition-colors break-words">nextshitftsolutions@gmail.com</a>
               </div>
               <div>
-                <h4 className="text-sm tracking-widest uppercase text-[color:var(--text-muted)] mb-2">Location</h4>
-                <p className="text-2xl font-bold">123 Cyber Street<br/>Neo Tokyo, 90210</p>
+                <h4 className="text-sm tracking-widest uppercase text-[color:var(--text-muted)] mb-2">Phone Number</h4>
+                <p className="text-2xl font-bold">+91 9599454313</p>
               </div>
             </div>
           </motion.div>
