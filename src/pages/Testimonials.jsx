@@ -5,38 +5,42 @@ import { Link } from 'react-router-dom';
 const testimonials = [
   {
     id: 1,
-    name: 'Sophia Martin',
-    role: 'CMO, Nova Labs',
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1974&auto=format&fit=crop',
+    name: 'Shobhiit Kulshreshth',
+    role: 'Gawri Ganga',
+    image:
+      'https://ui-avatars.com/api/?name=Shobhiit+Kulshreshth&background=6366f1&color=fff&size=128&bold=true',
     quote:
-      'Nextshift transformed our digital identity in under six weeks. We saw a 3.2x increase in qualified leads and a huge improvement in brand perception.',
+      'Nextshift captured our vision for Gawri Ganga and turned it into a polished web and marketing presence. Clear communication, solid execution, and a team that actually listens.',
     rating: 5,
   },
   {
     id: 2,
-    name: 'Daniel Brooks',
-    role: 'Founder, PixelForge',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop',
+    name: 'Shobhiit Kulshreshth',
+    role: 'Legaloids',
+    image:
+      'https://ui-avatars.com/api/?name=Shobhiit+Kulshreshth&background=6366f1&color=fff&size=128&bold=true',
     quote:
-      'Their team blends creativity with execution. From strategy to launch, every step felt structured, fast, and focused on measurable outcomes.',
+      'For Legaloids we needed something credible and professional online. They delivered exactly that—structured delivery, attention to detail, and a site we are proud to stand behind.',
     rating: 5,
   },
   {
     id: 3,
-    name: 'Ava Khan',
-    role: 'Head of Product, Driftly',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop',
+    name: 'Mudit Johri',
+    role: 'Compliance World',
+    image:
+      'https://ui-avatars.com/api/?name=Mudit+Johri&background=0ea5e9&color=fff&size=128&bold=true',
     quote:
-      'The new website and product storytelling gave us instant credibility with enterprise clients. It now truly reflects the quality of our platform.',
+      'Compliance World needed consistency across web development, SEO, and digital marketing. Nextshift tied it together—better visibility, clearer messaging, and dependable follow-through.',
     rating: 5,
   },
   {
     id: 4,
-    name: 'Noah Carter',
-    role: 'CEO, Axiom Commerce',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop',
+    name: 'Ambrish Tiwari',
+    role: 'Meta Microdigital',
+    image:
+      'https://ui-avatars.com/api/?name=Ambrish+Tiwari&background=8b5cf6&color=fff&size=128&bold=true',
     quote:
-      'From UX refinement to conversion optimization, the impact has been immediate. Our checkout drop-off decreased by 28% in the first month.',
+      'A strong partner for Meta Microdigital—fast iterations, thoughtful design, and marketing support that matches how we want to show up in the market.',
     rating: 5,
   },
 ];
@@ -44,7 +48,7 @@ const testimonials = [
 const stats = [
   { label: 'Client Satisfaction', value: '98%' },
   { label: 'Average Growth Rate', value: '3.4x' },
-  { label: 'Projects Delivered', value: '120+' },
+  { label: 'Projects Delivered', value: '10+' },
 ];
 
 export default function Testimonials() {

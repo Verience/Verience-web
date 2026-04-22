@@ -7,6 +7,7 @@ import Hero3D from '../components/canvas/Hero3D';
 import Marquee from '../components/ui/Marquee';
 import { Atom3D, Helix3D } from '../components/canvas/Creative3DElements';
 import { Link } from 'react-router-dom';
+import { featuredProjects } from '../data/projects';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,13 +16,6 @@ const services = [
   { icon: Code, title: "Web Development", desc: "High-performance, immersive websites built with modern web tech." },
   { icon: Megaphone, title: "PR Marketing", desc: "Strategic public relations that amplify your brand story and reputation." },
   { icon: Users, title: "Influencer Marketing", desc: "Leverage top creators to boost your brand reach and drive authentic engagement." }
-];
-
-const projects = [
-  { title: "Neon X", category: "Web App", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop" },
-  { title: "Aura Fintech", category: "Mobile App", image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?q=80&w=2070&auto=format&fit=crop" },
-  { title: "Velocity AI", category: "AI Platform", image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop" },
-  { title: "Elysium", category: "E-Commerce", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop" }
 ];
 
 export default function Home() {
@@ -169,9 +163,9 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            {projects.map((project, index) => (
+            {featuredProjects.map((project, index) => (
               <motion.div 
-                key={index}
+                key={project.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -188,10 +182,10 @@ export default function Home() {
                   />
                   {/* Overlay text */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12 text-white">
-                    <span className="text-[var(--secondary)] font-medium tracking-widest text-sm mb-2 uppercase translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-[var(--secondary)] font-medium tracking-widest text-sm mb-2 uppercase">
                       {project.category}
                     </span>
-                    <h3 className="text-3xl md:text-4xl font-heading font-bold translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                    <h3 className="text-3xl md:text-4xl font-heading font-bold">
                       {project.title}
                     </h3>
                   </div>

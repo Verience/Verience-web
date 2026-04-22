@@ -47,12 +47,12 @@ export default function About() {
             
             <div className="grid grid-cols-2 gap-8">
               <div className="glass p-6 rounded-2xl border border-[var(--surface-rgb)]/20 shadow-sm">
-                <div className="text-5xl font-black font-heading text-[var(--primary)] mb-2">50+</div>
+                <div className="text-5xl font-black font-heading text-[var(--primary)] mb-2">5+</div>
                 <div className="text-[color:var(--text-muted)] text-sm tracking-widest uppercase font-bold">Projects Delivered</div>
               </div>
               <div className="glass p-6 rounded-2xl border border-[var(--surface-rgb)]/20 shadow-sm">
-                <div className="text-5xl font-black font-heading text-[var(--accent)] mb-2">12+</div>
-                <div className="text-[color:var(--text-muted)] text-sm tracking-widest uppercase font-bold">Global Awards</div>
+                <div className="text-5xl font-black font-heading text-[var(--accent)] mb-2">4</div>
+                <div className="text-[color:var(--text-muted)] text-sm tracking-widest uppercase font-bold">Core Services</div>
               </div>
             </div>
           </motion.div>
