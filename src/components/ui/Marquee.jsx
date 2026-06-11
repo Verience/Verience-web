@@ -1,53 +1,47 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Marquee() {
-  const marqueeRef = useRef(null);
   const textRef = useRef(null);
 
   useEffect(() => {
-    const marquee = marqueeRef.current;
-    
-    // Simple endless horizontal loop with GSAP
     const totalWidth = textRef.current.offsetWidth / 2;
-    
+
     gsap.to(textRef.current, {
       x: -totalWidth,
       ease: 'none',
-      duration: 15,
+      duration: 18,
       repeat: -1,
     });
-    
   }, []);
 
   const items = [
-    "DIGITAL MARKETING •",
-    "BRAND IDENTITY •",
-    "WEB DEVELOPMENT •",
-    "UI/UX DESIGN •",
-    "AI SOLUTIONS •",
-    "SEO STRATEGY •",
+    'Digital Marketing',
+    'Web Development',
+    'Brand Identity',
+    'PR & Media',
+    'SEO Strategy',
+    'Content Production',
   ];
 
+  const renderTrack = (prefix) => (
+    <div className="flex gap-10 px-5 items-center">
+      {items.map((item, idx) => (
+        <span key={`${prefix}-${idx}`} className="flex items-center gap-10">
+          <span className="text-2xl md:text-5xl font-display font-medium tracking-tight text-white">
+            {item}
+          </span>
+          <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] shrink-0" />
+        </span>
+      ))}
+    </div>
+  );
+
   return (
-    <div 
-      ref={marqueeRef}
-      className="w-full py-6 md:py-10 bg-[var(--primary)] text-[color:var(--bg)] overflow-hidden relative rotate-[-2deg] scale-[1.05] shadow-2xl z-20 my-20"
-    >
-      <div 
-        ref={textRef}
-        className="whitespace-nowrap flex w-max"
-      >
-        {/* Double the content for seamless looping */}
-        <div className="flex gap-8 px-4 text-4xl md:text-7xl font-heading font-black tracking-tighter">
-          {items.map((item, idx) => <span key={`a-${idx}`}>{item}</span>)}
-        </div>
-        <div className="flex gap-8 px-4 text-4xl md:text-7xl font-heading font-black tracking-tighter">
-          {items.map((item, idx) => <span key={`b-${idx}`}>{item}</span>)}
-        </div>
+    <div className="w-full py-12 md:py-16 bg-[var(--color-canvas-night)] overflow-hidden border-y border-white/5">
+      <div ref={textRef} className="whitespace-nowrap flex w-max items-center">
+        {renderTrack('a')}
+        {renderTrack('b')}
       </div>
     </div>
   );

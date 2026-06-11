@@ -1,0 +1,31 @@
+{
+  "slug": "legaloids",
+  "title": "Legaloids",
+  "tagline": "A refined web presence for a premier business law consulting firm.",
+  "description": "Legaloids Law Firm is a boutique consulting practice delivering integrated legal solutions for complex commercial challenges — corporate law, litigation, and advisory for businesses in India and internationally.",
+  "services": ["Web Development"],
+  "website": "https://legaloids.com",
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "linkedin": "",
+    "twitter": ""
+  },
+  "highlights": [
+    { "label": "Industry", "value": "Legal services & corporate advisory" },
+    { "label": "Firm type", "value": "Premier business law consulting" },
+    { "label": "Verience scope", "value": "Website design & development" }
+  ],
+  "features": [
+    "Corporate law, litigation, and strategic advisory",
+    "Corporate governance, dispute resolution & regulatory compliance",
+    "Multidisciplinary team — lawyers, company secretaries & chartered accountants",
+    "Sector-specialist counsel for complex commercial matters",
+    "BCI-compliant informational web experience with professional tone"
+  ],
+  "contentPreview": [
+    "Legaloids needed a website that communicates authority without overstepping Bar Council of India advertising guidelines. We delivered a clean, professional platform that presents their practice areas, team, and consultation flow with clarity.",
+    "The site supports their positioning as a trusted partner for corporate clients — highlighting integrated legal solutions, deep industry knowledge, and end-to-end advisory across governance, compliance, and dispute resolution.",
+    "Information architecture, responsive layout, and a credible visual system help prospective clients understand Legaloids' expertise before they reach out for a consultation."
+  ]
+}

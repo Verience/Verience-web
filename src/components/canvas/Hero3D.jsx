@@ -36,7 +36,7 @@ function Particles() {
       <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#8a2be2"
+          color="#2f6bff"
           size={0.05}
           sizeAttenuation={true}
           depthWrite={false}
@@ -61,13 +61,13 @@ function AbstractShape() {
       <mesh ref={meshRef}>
         <torusKnotGeometry args={[2, 0.6, 128, 32]} />
         <meshPhysicalMaterial 
-          color="#ff007f" 
-          roughness={0.1} 
-          metalness={0.8}
+          color="#2f6bff" 
+          roughness={0.15} 
+          metalness={0.85}
           clearcoat={1}
           clearcoatRoughness={0.1}
-          emissive="#2a0044"
-          emissiveIntensity={0.5}
+          emissive="#0a1a40"
+          emissiveIntensity={0.4}
         />
       </mesh>
     </Float>
@@ -79,8 +79,8 @@ export default function Hero3D() {
     <div className="absolute inset-0 z-0 h-full w-full pointer-events-none">
       <Canvas camera={{ position: [0, 0, 8], fov: 60 }} gl={{ antialias: true, alpha: true }}>
         <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 10]} intensity={2} color="#818cf8" />
-        <directionalLight position={[-10, -10, -10]} intensity={1} color="#38bdf8" />
+        <directionalLight position={[10, 10, 10]} intensity={2} color="#4d8bff" />
+        <directionalLight position={[-10, -10, -10]} intensity={1} color="#1a3a8a" />
         
         <Particles />
         <AbstractShape />
@@ -88,8 +88,7 @@ export default function Hero3D() {
         <Environment preset="city" />
         <Preload all />
       </Canvas>
-      {/* Soft overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--bg)] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black pointer-events-none" />
     </div>
   );
 }

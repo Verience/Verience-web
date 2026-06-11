@@ -1,0 +1,31 @@
+{
+  "slug": "compliance-world",
+  "title": "Compliance World",
+  "tagline": "Digital platform for trademark and business compliance — built to scale with operators.",
+  "description": "Compliance World helps Indian businesses stay on track with registration, GST, income tax, ROC filings, and payroll — combining deadline intelligence, secure document flow, and a specialist team that owns filings end to end.",
+  "services": ["Web Development", "Digital Marketing", "SEO Strategy"],
+  "website": "https://complianceworld.in",
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "linkedin": "",
+    "twitter": ""
+  },
+  "highlights": [
+    { "label": "Industry", "value": "Business & tax compliance" },
+    { "label": "Client rating", "value": "4.9/5 satisfaction · 48h avg response" },
+    { "label": "Verience scope", "value": "Web · Marketing · SEO" }
+  ],
+  "features": [
+    "Company registration — Pvt Ltd, LLP, OPC & proprietorship",
+    "GST filing, income tax, TDS & notice support",
+    "ROC compliance — annual filings, director changes & MCA updates",
+    "Single accountable team with proactive deadline tracking",
+    "Guides, FAQs, and service pages for founders and operators"
+  ],
+  "contentPreview": [
+    "Compliance World came to Verience for a unified digital presence that matches the precision of their compliance work. We built a structured website that explains services, process, and pricing philosophy in plain language.",
+    "Our SEO and content work targets high-intent searches around GST, ROC, company registration, and payroll compliance — helping the brand reach founders who cannot afford missed statutory deadlines.",
+    "Digital marketing supports lead generation while the site itself reinforces trust: health scores, turnaround expectations, secure document handling, and a clear enquiry-to-completion workflow."
+  ]
+}

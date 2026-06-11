@@ -1,0 +1,31 @@
+{
+  "slug": "meta-microdigital",
+  "title": "Meta Microdigital",
+  "tagline": "Web and marketing for an IT & digital marketing company.",
+  "description": "Meta Microdigital is an IT and digital marketing firm. Verience partnered on their web presence and ongoing marketing — helping them present services clearly and reach clients in a competitive digital services market.",
+  "services": ["Web Development", "Digital Marketing"],
+  "website": "https://metamicrodigital.com",
+  "social": {
+    "instagram": "https://www.instagram.com/metamicrodigital/",
+    "facebook": "",
+    "linkedin": "",
+    "twitter": ""
+  },
+  "highlights": [
+    { "label": "Industry", "value": "IT & digital marketing" },
+    { "label": "Focus", "value": "B2B digital services" },
+    { "label": "Verience scope", "value": "Web and Marketing" }
+  ],
+  "features": [
+    "Corporate website for IT and digital marketing services",
+    "Brand-aligned design for a technology-forward agency",
+    "Social presence support via Instagram @metamicrodigital",
+    "Campaign and content support for client acquisition",
+    "Fast iteration cycles for launches and updates"
+  ],
+  "contentPreview": [
+    "Meta Microdigital needed a web presence that reflects their dual focus on IT solutions and digital marketing. We designed and built a site that communicates capability without clutter — making it easy for prospects to understand what they offer.",
+    "Alongside development, we support their digital marketing with content and social strategy aligned to how they want to show up in the market.",
+    "The partnership stays agile: quick turnarounds on updates, thoughtful design decisions, and marketing assets that match a modern tech-services brand."
+  ]
+}
