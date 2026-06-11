@@ -1,0 +1,22 @@
+{
+  "slug": "compliance-world",
+  "title": "Compliance World",
+  "tagline": "Unified web, marketing, and SEO across every channel.",
+  "description": "Compliance World needed consistency across web development, SEO, and digital marketing. We tied it together with clearer messaging and better visibility.",
+  "services": ["Web Development", "Digital Marketing", "SEO Strategy"],
+  "website": "https://complianceworld.in",
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "linkedin": "",
+    "twitter": ""
+  },
+  "highlights": [
+    { "label": "Services", "value": "Web · Marketing · SEO" },
+    { "label": "Scope", "value": "Full digital rollout" }
+  ],
+  "contentPreview": [
+    "Compliance World came to us with fragmented digital touchpoints. We unified their web presence, marketing messaging, and SEO foundations.",
+    "The result is a cohesive brand experience — better search visibility, clearer communication, and a website that supports their compliance expertise."
+  ]
+}

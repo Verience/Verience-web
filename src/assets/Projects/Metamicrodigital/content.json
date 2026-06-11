@@ -1,0 +1,22 @@
+{
+  "slug": "meta-microdigital",
+  "title": "Meta Microdigital",
+  "tagline": "Web and marketing for a digital-first company.",
+  "description": "Meta Microdigital partnered with Verience for web development and digital marketing — fast iterations and thoughtful design that matches how they show up in market.",
+  "services": ["Web Development", "Digital Marketing"],
+  "website": "https://metamicrodigital.com",
+  "social": {
+    "instagram": "https://www.instagram.com/metamicrodigital/",
+    "facebook": "",
+    "linkedin": "",
+    "twitter": ""
+  },
+  "highlights": [
+    { "label": "Services", "value": "Web · Marketing" },
+    { "label": "Approach", "value": "Agile delivery" }
+  ],
+  "contentPreview": [
+    "Meta Microdigital needed a partner who could move quickly without sacrificing quality. We built their web presence and supported ongoing marketing efforts.",
+    "From site structure to campaign creative, every deliverable was shaped to help them stand out in a competitive digital landscape."
+  ]
+}

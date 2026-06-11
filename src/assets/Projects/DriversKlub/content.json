@@ -1,0 +1,22 @@
+{
+  "slug": "drivers-klub",
+  "title": "Driver's Klub",
+  "tagline": "Social media and brand building for an automotive community.",
+  "description": "Driver's Klub partnered with Verience for social media management and brand identity — building a recognizable presence across platforms.",
+  "services": ["Digital Marketing", "Brand Identity"],
+  "website": "",
+  "social": {
+    "instagram": "https://www.instagram.com/driversklub.in/",
+    "facebook": "",
+    "linkedin": "",
+    "twitter": ""
+  },
+  "highlights": [
+    { "label": "Services", "value": "Social · Brand" },
+    { "label": "Focus", "value": "Community & content" }
+  ],
+  "contentPreview": [
+    "Driver's Klub is building a community around automotive culture. We help shape their brand voice and social content strategy.",
+    "Add your project details, carousel images, and social links in this folder's content.json and image files."
+  ]
+}

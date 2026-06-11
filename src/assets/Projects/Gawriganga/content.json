@@ -1,0 +1,22 @@
+{
+  "slug": "gawri-ganga",
+  "title": "Gawri Ganga",
+  "tagline": "Web, marketing, and SEO for a growing brand.",
+  "description": "End-to-end digital work for Gawri Ganga — from a polished website to ongoing marketing and search visibility.",
+  "services": ["Web Development", "Digital Marketing", "SEO Strategy"],
+  "website": "https://gawriganga.com",
+  "social": {
+    "instagram": "https://www.instagram.com/gawriganga.in/",
+    "facebook": "",
+    "linkedin": "",
+    "twitter": ""
+  },
+  "highlights": [
+    { "label": "Services", "value": "Web · Marketing · SEO" },
+    { "label": "Deliverables", "value": "Website, campaigns, content" }
+  ],
+  "contentPreview": [
+    "We partnered with Gawri Ganga to build a credible online presence — a fast, modern website paired with marketing that reflects their brand voice.",
+    "Our work included web development, digital marketing campaigns, and SEO strategy to improve discoverability and drive consistent traffic."
+  ]
+}
