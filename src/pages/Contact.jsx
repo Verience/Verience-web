@@ -1,7 +1,56 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
+import { isEmailJsConfigured, sendContactEmail } from '../lib/emailjs';
+
+const initialForm = {
+  from_name: '',
+  from_email: '',
+  message: '',
+};
 
 export default function Contact() {
+  const [form, setForm] = useState(initialForm);
+  const [status, setStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((current) => ({ ...current, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setErrorMessage('');
+
+    if (!form.from_name.trim() || !form.from_email.trim() || !form.message.trim()) {
+      setStatus('error');
+      setErrorMessage('Please fill in your name, email, and message.');
+      return;
+    }
+
+    if (!isEmailJsConfigured()) {
+      setStatus('error');
+      setErrorMessage('Email service is not configured. Add your EmailJS keys to a .env file.');
+      return;
+    }
+
+    setStatus('sending');
+
+    try {
+      await sendContactEmail(form);
+      setStatus('success');
+      setForm(initialForm);
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'Something went wrong while sending your message. Please try again.'
+      );
+    }
+  };
+
   return (
     <div className="pt-32 pb-24 min-h-screen section-muted">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
@@ -13,20 +62,20 @@ export default function Contact() {
           >
             <p className="eyebrow eyebrow-accent mb-4">Contact</p>
             <h1 className="display-section mb-6">
-              Let's build<br /><span className="text-accent">something real.</span>
+              Let&apos;s build<br /><span className="text-accent">something real.</span>
             </h1>
             <p className="body-lead mb-12 max-w-md">
-              Have a project in mind? Reach out and we'll respond within one business day.
+              Have a project in mind? Reach out and we&apos;ll respond within one business day.
             </p>
 
             <div className="space-y-8">
               <div>
                 <p className="eyebrow mb-2">Email</p>
                 <a
-                  href="mailto:wemultify@gmail.com"
+                  href="mailto:hello@veriencestudio.com"
                   className="text-lg font-medium hover:text-accent transition-colors"
                 >
-                  wemultify@gmail.com
+                  hello@veriencestudio.com
                 </a>
               </div>
               <div>
@@ -42,25 +91,79 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="card-light"
           >
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
-                <label className="block text-sm text-[color:var(--text-muted)] mb-2">Name</label>
-                <input type="text" className="input-field" placeholder="Your name" />
-              </div>
-              <div>
-                <label className="block text-sm text-[color:var(--text-muted)] mb-2">Email</label>
-                <input type="email" className="input-field" placeholder="you@company.com" />
-              </div>
-              <div>
-                <label className="block text-sm text-[color:var(--text-muted)] mb-2">Message</label>
-                <textarea
-                  rows="5"
-                  className="input-field resize-none"
-                  placeholder="Tell us about your project..."
+                <label htmlFor="from_name" className="mb-2 block text-sm text-[color:var(--text-muted)]">
+                  Name
+                </label>
+                <input
+                  id="from_name"
+                  name="from_name"
+                  type="text"
+                  value={form.from_name}
+                  onChange={handleChange}
+                  className="input-field"
+                  placeholder="Your name"
+                  autoComplete="name"
+                  disabled={status === 'sending'}
+                  required
                 />
               </div>
-              <Button type="submit" variant="accent" className="w-full">
-                Send message
+
+              <div>
+                <label htmlFor="from_email" className="mb-2 block text-sm text-[color:var(--text-muted)]">
+                  Email
+                </label>
+                <input
+                  id="from_email"
+                  name="from_email"
+                  type="email"
+                  value={form.from_email}
+                  onChange={handleChange}
+                  className="input-field"
+                  placeholder="you@company.com"
+                  autoComplete="email"
+                  disabled={status === 'sending'}
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="mb-2 block text-sm text-[color:var(--text-muted)]">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  value={form.message}
+                  onChange={handleChange}
+                  className="input-field resize-none"
+                  placeholder="Tell us about your project..."
+                  disabled={status === 'sending'}
+                  required
+                />
+              </div>
+
+              {status === 'success' ? (
+                <p className="rounded-xl border border-[rgba(47,107,255,0.15)] bg-[var(--color-accent-soft)] px-4 py-3 text-sm text-[var(--color-accent)]">
+                  Message sent. We&apos;ll get back to you within one business day.
+                </p>
+              ) : null}
+
+              {status === 'error' && errorMessage ? (
+                <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                  {errorMessage}
+                </p>
+              ) : null}
+
+              <Button
+                type="submit"
+                variant="accent"
+                className="w-full disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={status === 'sending'}
+              >
+                {status === 'sending' ? 'Sending...' : 'Send message'}
               </Button>
             </form>
           </motion.div>

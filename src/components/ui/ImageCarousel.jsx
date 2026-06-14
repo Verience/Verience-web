@@ -47,7 +47,7 @@ export default function ImageCarousel({ images, alt }) {
           <motion.img
             key={index}
             src={images[index]}
-            alt={`${alt} — slide ${index + 1}`}
+            alt={`${alt}, slide ${index + 1}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

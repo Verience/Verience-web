@@ -1,4 +1,4 @@
-/** Service filter labels — must match `services` arrays in each project's content.json */
+/** Service filter labels, must match `services` arrays in each project's content.json */
 export const PROJECT_SERVICE_FILTERS = [
   'Digital Marketing',
   'Web Development',
@@ -10,6 +10,7 @@ export const PROJECT_SERVICE_FILTERS = [
 
 export {
   projectCases,
+  projectReels,
   getProjectBySlug,
   featuredProjects,
 } from './projectDetails.js';

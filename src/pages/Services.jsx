@@ -25,7 +25,7 @@ export default function Services() {
             Everything you need to <span className="text-accent">grow online.</span>
           </h1>
           <p className="body-lead">
-            End-to-end digital services — from your first website to ongoing marketing and growth.
+            End-to-end digital services, from your first website to ongoing marketing and growth.
           </p>
         </motion.div>
 

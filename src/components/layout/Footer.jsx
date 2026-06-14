@@ -7,8 +7,13 @@ const navItems = [
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Projects', path: '/projects' },
-  { label: 'Testimonials', path: '/testimonials' },
   { label: 'Contact', path: '/contact' },
+];
+
+const socialLinks = [
+  { Icon: Twitter, href: '#', label: 'Twitter' },
+  { Icon: Linkedin, href: 'https://www.linkedin.com/company/verience/', label: 'LinkedIn' },
+  { Icon: Instagram, href: '#', label: 'Instagram' },
 ];
 
 export default function Footer() {
@@ -28,12 +33,14 @@ export default function Footer() {
               experiences for companies that want to move faster.
             </p>
             <div className="flex items-center gap-5">
-              {[Twitter, Linkedin, Instagram].map((Icon, i) => (
+              {socialLinks.map(({ Icon, href, label }) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={label}
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="text-[var(--color-link-muted)] hover:text-[var(--color-accent)] transition-colors"
-                  aria-label="Social link"
+                  aria-label={label}
                 >
                   <Icon size={18} />
                 </a>
@@ -61,8 +68,8 @@ export default function Footer() {
             <h4 className="text-sm font-medium mb-5 text-white/90">Contact</h4>
             <ul className="space-y-3 text-sm text-[var(--color-link-muted)]">
               <li>
-                <a href="mailto:wemultify@gmail.com" className="hover:text-white transition-colors">
-                  wemultify@gmail.com
+                <a href="mailto:hello@veriencestudio.com" className="hover:text-white transition-colors">
+                  hello@veriencestudio.com
                 </a>
               </li>
               <li>+91 9599454313</li>

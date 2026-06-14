@@ -15,7 +15,7 @@ export default function About() {
             A studio at the intersection of <span className="text-accent">tech and media.</span>
           </h1>
           <p className="body-lead">
-            Founded in 2024, Verience helps brands build credible digital presence —
+            Founded in 2024, Verience helps brands build credible digital presence,
             through development, marketing, and strategy that actually ships.
           </p>
         </motion.div>
@@ -44,7 +44,7 @@ export default function About() {
             <div>
               <h3 className="text-xl font-display font-medium mb-3">How we work</h3>
               <p className="text-[color:var(--text-muted)] leading-relaxed">
-                We move fast without cutting corners — clear scopes, regular updates,
+                We move fast without cutting corners, clear scopes, regular updates,
                 and deliverables you can actually use. No bloated decks, no endless revisions.
               </p>
             </div>

@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Hero3D from '../components/canvas/Hero3D';
 import Marquee from '../components/ui/Marquee';
-import { featuredProjects } from '../data/projectDetails';
+import ProjectReelCarousel from '../components/ui/ProjectReelCarousel';
+import { featuredProjects, projectReels } from '../data/projectDetails';
+import { projectTestimonials } from '../data/testimonials';
 
 const services = [
   {
@@ -15,7 +17,7 @@ const services = [
   {
     num: '02',
     title: 'Web Development',
-    desc: 'Fast, scalable websites and apps — built clean, shipped on time.',
+    desc: 'Fast, scalable websites and apps, built clean, shipped on time.',
   },
   {
     num: '03',
@@ -72,7 +74,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="body-lead body-lead-on-dark max-w-lg mb-10"
               >
-                Verience partners with companies on web, media, and marketing —
+                Verience partners with companies on web, media, and marketing,
                 from first launch to full-scale digital presence.
               </motion.p>
 
@@ -160,6 +162,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Reel showcase */}
+      <section className="section-pad section-muted overflow-hidden border-t border-[var(--color-hairline)]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.6 }}
+            className="mb-14 max-w-2xl"
+          >
+            <p className="eyebrow eyebrow-accent mb-4">Client reels</p>
+            <h2 className="display-section mb-4">Work in motion.</h2>
+            <p className="body-lead">
+              Campaigns and content we&apos;ve built for clients, swipe through the reels.
+            </p>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.65, delay: 0.08 }}
+        >
+          <ProjectReelCarousel reels={projectReels} />
+        </motion.div>
+      </section>
+
       {/* Work */}
       <section className="section-pad bg-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
@@ -209,6 +239,44 @@ export default function Home() {
                     {project.title}
                   </h3>
                 </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section-pad section-muted border-t border-[var(--color-hairline)]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.6 }}
+            className="mb-14 max-w-2xl"
+          >
+            <p className="eyebrow eyebrow-accent mb-4">Testimonials</p>
+            <h2 className="display-section mb-4">Clients who stuck around.</h2>
+            <p className="body-lead">Real feedback from teams we&apos;ve built with.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {projectTestimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08, duration: 0.45 }}
+                className="card-light"
+              >
+                <p className="mb-8 text-[15px] leading-relaxed text-[color:var(--text-muted)]">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <div className="border-t border-[var(--color-hairline)] pt-5">
+                  <p className="text-sm font-medium">{testimonial.name}</p>
+                  <p className="text-sm text-[color:var(--text-muted)]">{testimonial.role}</p>
+                </div>
               </motion.div>
             ))}
           </div>
