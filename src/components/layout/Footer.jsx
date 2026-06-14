@@ -79,7 +79,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-[var(--color-link-muted)]">
-            © {new Date().getFullYear()} Verience Technology and Media
+            © {new Date().getFullYear()} Verience Media and Technology
           </p>
           <p className="text-xs text-[var(--color-link-muted)]">
             Web · Media · Strategy
