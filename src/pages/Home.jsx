@@ -55,7 +55,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="eyebrow eyebrow-on-dark eyebrow-accent mb-8"
               >
-                Technology & Media Studio
+                Media & Technology Studio
               </motion.p>
 
               <motion.h1
