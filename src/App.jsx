@@ -4,6 +4,7 @@ import Lenis from 'lenis';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ScrollToTop, { setLenisInstance } from './components/layout/ScrollToTop';
+import RouteSeo from './components/seo/RouteSeo';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <Router>
+      <RouteSeo />
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />

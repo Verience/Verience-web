@@ -13,7 +13,7 @@ const navItems = [
 const socialLinks = [
   { Icon: Twitter, href: '#', label: 'Twitter' },
   { Icon: Linkedin, href: 'https://www.linkedin.com/company/verience/', label: 'LinkedIn' },
-  { Icon: Instagram, href: '#', label: 'Instagram' },
+  { Icon: Instagram, href: 'https://www.instagram.com/veriencestudio/', label: 'Instagram' },
 ];
 
 export default function Footer() {
@@ -29,7 +29,7 @@ export default function Footer() {
               className="mb-5"
             />
             <p className="text-[var(--color-link-muted)] max-w-sm mb-8 text-sm leading-relaxed">
-              A technology and media studio building digital products, campaigns, and brand
+              A media and technology studio building digital products, campaigns, and brand
               experiences for companies that want to move faster.
             </p>
             <div className="flex items-center gap-5">
@@ -72,7 +72,7 @@ export default function Footer() {
                   hello@veriencestudio.com
                 </a>
               </li>
-              <li>+91 9599454313</li>
+              <li>+91 8368759792</li>
             </ul>
           </div>
         </div>

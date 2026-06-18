@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Hero3D from '../components/canvas/Hero3D';
 import Marquee from '../components/ui/Marquee';
+import ClientMarquee from '../components/ui/ClientMarquee';
 import ProjectReelCarousel from '../components/ui/ProjectReelCarousel';
 import { featuredProjects, projectReels } from '../data/projectDetails';
 import { projectTestimonials } from '../data/testimonials';
@@ -36,8 +37,6 @@ const stats = [
   { value: '6', label: 'Service lines' },
   { value: '4', label: 'Active markets' },
 ];
-
-const clients = ['Gawri Ganga', 'Legaloids', 'Compliance World', 'Meta Microdigital', "Driver's Klub"];
 
 export default function Home() {
   return (
@@ -112,19 +111,7 @@ export default function Home() {
 
       <Marquee />
 
-      {/* Clients */}
-      <section className="section-muted py-14 border-b border-[var(--color-hairline)]">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <p className="eyebrow text-center mb-8">Trusted by teams at</p>
-          <div className="flex flex-wrap justify-center items-center gap-x-14 gap-y-5">
-            {clients.map((name) => (
-              <span key={name} className="text-sm font-medium text-[var(--color-shade-60)] tracking-wide">
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ClientMarquee />
 
       {/* Services bento */}
       <section className="section-pad section-muted bg-grid">

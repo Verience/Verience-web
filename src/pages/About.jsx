@@ -15,7 +15,7 @@ export default function About() {
             A studio at the intersection of <span className="text-accent">tech and media.</span>
           </h1>
           <p className="body-lead">
-            Founded in 2024, Verience helps brands build credible digital presence,
+            Founded in 2025, Verience helps brands build credible digital presence,
             through development, marketing, and strategy that actually ships.
           </p>
         </motion.div>
