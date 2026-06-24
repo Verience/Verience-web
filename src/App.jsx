@@ -5,13 +5,15 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ScrollToTop, { setLenisInstance } from './components/layout/ScrollToTop';
 import RouteSeo from './components/seo/RouteSeo';
+import StructuredData from './components/seo/StructuredData';
 import Home from './pages/Home';
 import About from './pages/About';
-import Services from './pages/Services';
+import Services, { ServiceDetail } from './pages/Services';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
-import Team from './pages/Team';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 function App() {
   useEffect(() => {
@@ -39,6 +41,7 @@ function App() {
   return (
     <Router>
       <RouteSeo />
+      <StructuredData />
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -47,9 +50,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
-            <Route path="/team" element={<Team />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

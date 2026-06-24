@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Instagram } from 'lucide-react';
 import Logo from '../ui/Logo';
+import { SITE } from '../../lib/seo';
+import { getKeywordSummary } from '../../lib/keywords';
 
 const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Projects', path: '/projects' },
+  { label: 'Blog', path: '/blog' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -19,6 +22,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[var(--color-canvas-night)] text-white pt-20 pb-10 border-t border-white/5">
+      <p className="sr-only">{getKeywordSummary()}</p>
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
@@ -72,7 +76,21 @@ export default function Footer() {
                   hello@veriencestudio.com
                 </a>
               </li>
-              <li>+91 8368759792</li>
+              <li>
+                <a href={`tel:${SITE.phone}`} className="hover:text-white transition-colors">
+                  {SITE.phone.replace('+91', '+91 ')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SITE.social.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  WhatsApp
+                </a>
+              </li>
             </ul>
           </div>
         </div>

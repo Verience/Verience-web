@@ -2,12 +2,14 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
+import FaqAccordion from '../components/ui/FaqAccordion';
 import Hero3D from '../components/canvas/Hero3D';
 import Marquee from '../components/ui/Marquee';
 import ClientMarquee from '../components/ui/ClientMarquee';
 import ProjectReelCarousel from '../components/ui/ProjectReelCarousel';
 import { featuredProjects, projectReels } from '../data/projectDetails';
 import { projectTestimonials } from '../data/testimonials';
+import { getFaqStructuredData, homeFaqs } from '../data/faq';
 
 const services = [
   {
@@ -266,6 +268,38 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section-pad bg-white border-t border-[var(--color-hairline)]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getFaqStructuredData(homeFaqs)) }}
+        />
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
+            >
+              <p className="eyebrow eyebrow-accent mb-4">FAQ</p>
+              <h2 className="display-section mb-4">Common questions.</h2>
+              <p className="body-lead mb-8">
+                Straight answers about how we work, timelines, and what to expect when you reach out.
+              </p>
+              <Link to="/contact" className="link-arrow">
+                Still have questions? <ArrowRight size={15} />
+              </Link>
+            </motion.div>
+
+            <div className="lg:col-span-8">
+              <FaqAccordion items={homeFaqs} />
+            </div>
           </div>
         </div>
       </section>

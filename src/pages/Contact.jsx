@@ -10,6 +10,7 @@ import {
   Phone,
 } from 'lucide-react';
 import Button from '../components/ui/Button';
+import WhatsAppIcon from '../components/ui/WhatsAppIcon';
 import { isEmailJsConfigured, sendContactEmail } from '../lib/emailjs';
 import { SITE } from '../lib/seo';
 
@@ -33,6 +34,12 @@ const contactChannels = [
     value: '+91 8368759792',
     href: 'tel:+918368759792',
     hint: 'Weekdays, 10am to 7pm IST',
+  },
+  {
+    icon: WhatsAppIcon,
+    label: 'WhatsApp',
+    value: '+91 8368759792',
+    href: SITE.social.whatsapp,
   },
   {
     icon: Instagram,
@@ -69,7 +76,7 @@ function ContactChannelCard({ channel, index }) {
       className="group card-light !p-5 flex items-start gap-4 transition-all hover:-translate-y-0.5"
     >
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--color-accent-soft)] text-[var(--color-accent)] transition-colors group-hover:bg-[var(--color-accent)] group-hover:text-white">
-        <Icon size={18} strokeWidth={1.75} />
+        <Icon size={18} {...(Icon === WhatsAppIcon ? {} : { strokeWidth: 1.75 })} />
       </div>
       <div className="min-w-0 flex-1">
         <p className="eyebrow mb-1">{channel.label}</p>
@@ -163,7 +170,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.38 }}
+              transition={{ duration: 0.45, delay: 0.48 }}
               className="card-dark !p-6"
             >
               <div className="mb-5 flex items-center gap-3">
