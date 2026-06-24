@@ -1,6 +1,8 @@
 /** Primary SEO targets, visible to crawlers via schema/meta, not in page UI */
 export const SEO_KEYWORDS = {
   primary: [
+    'Verience Studio',
+    'Verience Studio Delhi',
     'Website Design Agency Delhi',
     'Web Development Company Delhi',
     'Branding Agency Delhi',
@@ -32,5 +34,5 @@ export function getAllKeywords() {
 /** Natural-language line for sr-only / schema, keeps keywords readable, not stuffed */
 export function getKeywordSummary() {
   const areas = SEO_LOCATION.areas.join(', ');
-  return `Verience is a digital marketing agency serving ${areas}: website design in Tilak Nagar, branding in West Delhi, restaurant marketing, real estate marketing, web development, social media, and Google Ads across Delhi and India.`;
+  return `Verience Studio is a Delhi-based digital agency serving ${areas}: website design in Tilak Nagar, branding in West Delhi, restaurant marketing, real estate marketing, web development, social media, and Google Ads across Delhi NCR and India.`;
 }

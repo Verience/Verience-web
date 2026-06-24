@@ -8,7 +8,7 @@ export default function Logo({ className, showWordmark = true, size = 32, wordma
       <span className={clsx('inline-flex items-center justify-center shrink-0', iconClassName)}>
         <img
           src={logoIcon}
-          alt="Verience"
+          alt="Verience Studio"
           width={size}
           height={size}
           className="object-contain"
@@ -16,7 +16,7 @@ export default function Logo({ className, showWordmark = true, size = 32, wordma
       </span>
       {showWordmark && (
         <span className={clsx('text-lg font-medium tracking-tight', wordmarkClassName)}>
-          Verience
+          Verience Studio
         </span>
       )}
     </Link>

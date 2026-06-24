@@ -1,8 +1,13 @@
 export const homeFaqs = [
   {
-    question: 'What services does Verience offer?',
+    question: 'What is Verience Studio?',
     answer:
-      'We cover digital marketing, web development, PR and influencer campaigns, SEO, and brand identity. Most clients start with one service and expand as they grow. Browse our services page for the full breakdown.',
+      'Verience Studio is a Delhi-based media and technology studio offering website design, web development, branding, social media marketing, SEO, and Google Ads. We help businesses across Delhi NCR and India build and grow their digital presence.',
+  },
+  {
+    question: 'What services does Verience Studio offer?',
+    answer:
+      'We cover digital marketing, web development, PR and influencer campaigns, SEO, and brand identity. Most clients start with one service and expand as they grow. Browse our services page for the full breakdown from Verience Studio.',
   },
   {
     question: 'How long does a typical website project take?',

@@ -33,7 +33,7 @@ export default function Footer() {
               className="mb-5"
             />
             <p className="text-[var(--color-link-muted)] max-w-sm mb-8 text-sm leading-relaxed">
-              A media and technology studio building digital products, campaigns, and brand
+              Verience Studio is a media and technology studio building digital products, campaigns, and brand
               experiences for companies that want to move faster.
             </p>
             <div className="flex items-center gap-5">

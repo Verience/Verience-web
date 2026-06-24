@@ -76,7 +76,7 @@ export default function Home() {
                 className="body-lead body-lead-on-dark max-w-lg mb-10"
               >
                 Verience partners with companies on web, media, and marketing,
-                from first launch to full-scale digital presence.
+                from first launch to full-scale digital presence..
               </motion.p>
 
               <motion.div

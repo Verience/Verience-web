@@ -2,6 +2,7 @@ import { getAllKeywords, SEO_KEYWORDS, SEO_LOCATION } from './keywords';
 
 export const SITE = {
   name: 'Verience Media and Technology',
+  brandName: 'Verience Studio',
   shortName: 'Verience',
   url: 'https://veriencestudio.com',
   email: 'hello@veriencestudio.com',
@@ -10,7 +11,7 @@ export const SITE = {
   locale: 'en_IN',
   defaultImage: '/favicon.png',
   defaultDescription:
-    'Verience is a website design agency and web development company in Delhi, also a branding, social media marketing, and Google Ads agency helping brands ship websites and campaigns since 2025.',
+    'Verience Studio is a website design agency and web development company in Delhi, also a branding, social media marketing, and Google Ads agency helping brands ship websites and campaigns since 2025.',
   social: {
     instagram: 'https://www.instagram.com/veriencestudio/',
     linkedin: 'https://www.linkedin.com/company/verience/',
@@ -21,31 +22,31 @@ export const SITE = {
 
 const PAGE_SEO = {
   '/': {
-    title: 'Website Design & Web Development Agency Delhi | Verience',
+    title: 'Verience Studio | Website Design & Web Development Agency Delhi',
     description: SITE.defaultDescription,
   },
   '/about': {
-    title: 'About | Branding & Digital Agency Delhi',
+    title: 'About Verience Studio | Branding & Digital Agency Delhi',
     description:
-      'Founded in 2025 in Delhi, Verience is a media and technology studio and a branding agency helping companies build credible digital presence through web development, marketing, and strategy.',
+      'Verience Studio is a Delhi media and technology studio and branding agency helping companies build credible digital presence through web development, marketing, and strategy since 2025.',
   },
   '/services': {
-    title: 'Services | Digital Marketing Agency Delhi NCR',
+    title: 'Services | Verience Studio Digital Marketing Agency Delhi NCR',
     description:
-      'Explore six core services: digital marketing, web development, PR, influencer marketing, SEO, and brand identity from Verience in Delhi NCR.',
+      'Explore six core services from Verience Studio: digital marketing, web development, PR, influencer marketing, SEO, and brand identity in Delhi NCR.',
   },
   '/projects': {
-    title: 'Projects | Website Design & Social Media Agency Delhi',
+    title: 'Projects | Verience Studio Website Design & Social Media Delhi',
     description:
-      'Portfolio from a website design agency Delhi and social media marketing agency Delhi: web builds, reels, branding, and campaigns for clients across Delhi NCR, Tilak Nagar, and West Delhi.',
+      'Verience Studio portfolio: website design, social media reels, branding, and campaigns for clients across Delhi NCR, Tilak Nagar, and West Delhi.',
   },
   '/contact': {
-    title: 'Contact | Website Design Tilak Nagar & West Delhi',
+    title: 'Contact Verience Studio | Website Design Tilak Nagar & West Delhi',
     description:
-      'Contact Verience for website design in Tilak Nagar, branding in West Delhi, restaurant and real estate marketing across Delhi NCR. Reply within one business day.',
+      'Contact Verience Studio for website design in Tilak Nagar, branding in West Delhi, restaurant and real estate marketing across Delhi NCR. Reply within one business day.',
   },
   '/blog': {
-    title: 'Blog | Web Design, SEO & Branding Insights',
+    title: 'Blog | Verience Studio Web Design, SEO & Branding Insights',
     description:
       'Articles on website design, lead generation, AI search, SEO trends 2026, branding, and UI UX design for Delhi and NCR businesses.',
   },
@@ -90,7 +91,10 @@ function toAbsoluteUrl(path) {
 }
 
 function formatTitle(title) {
-  return title.includes(SITE.shortName) ? title : `${title} | ${SITE.shortName}`;
+  if (title.includes(SITE.brandName) || title.includes(SITE.shortName)) {
+    return title;
+  }
+  return `${title} | ${SITE.brandName}`;
 }
 
 function buildServiceOffers() {
@@ -117,6 +121,7 @@ export function getStructuredDataGraph() {
         '@type': 'Organization',
         '@id': ORG_ID,
         name: SITE.name,
+        alternateName: [SITE.brandName, SITE.shortName],
         url: SITE.url,
         logo: `${SITE.url}${SITE.defaultImage}`,
         email: SITE.email,
@@ -137,7 +142,8 @@ export function getStructuredDataGraph() {
       {
         '@type': 'ProfessionalService',
         '@id': LOCAL_BUSINESS_ID,
-        name: SITE.name,
+        name: SITE.brandName,
+        alternateName: [SITE.name, SITE.shortName],
         url: SITE.url,
         image: `${SITE.url}${SITE.defaultImage}`,
         email: SITE.email,
@@ -166,7 +172,8 @@ export function getStructuredDataGraph() {
         '@type': 'WebSite',
         '@id': WEBSITE_ID,
         url: SITE.url,
-        name: SITE.name,
+        name: SITE.brandName,
+        alternateName: SITE.name,
         description: SITE.defaultDescription,
         publisher: { '@id': ORG_ID },
         inLanguage: 'en-IN',
@@ -247,7 +254,7 @@ export function applyPageSeo({ title, description, path = '/', image, type = 'we
   upsertMeta('name', 'robots', 'index, follow');
   applyGeoMeta();
   applyKeywordMeta();
-  upsertMeta('property', 'og:site_name', SITE.name);
+  upsertMeta('property', 'og:site_name', SITE.brandName);
   upsertMeta('property', 'og:type', type);
   upsertMeta('property', 'og:url', canonicalUrl);
   upsertMeta('property', 'og:title', pageTitle);

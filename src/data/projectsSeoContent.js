@@ -6,7 +6,7 @@ export const projectsArticleSections = [
   {
     heading: 'Client work across web, media, and growth',
     paragraphs: [
-      'This portfolio showcases projects Verience has delivered as a website design agency Delhi businesses hire for full builds, as a social media marketing agency Delhi brands trust for reels and campaigns, and as a web development company Delhi teams rely on for fast, maintainable sites. Every case study here represents end-to-end thinking, not isolated deliverables that never connected to a business goal.',
+      'This portfolio showcases work Verience Studio has delivered as a website design agency Delhi businesses hire for full builds, as a social media marketing agency Delhi brands trust for reels and campaigns, and as a web development company Delhi teams rely on for fast, maintainable sites. Every case study here represents end-to-end thinking, not isolated deliverables that never connected to a business goal.',
       'Browse by Tech or Media to see how we approach different industries: compliance platforms, mobility apps, wellness brands, legal tech, and more. Click any project for reels, visuals, deliverables, and the story behind the work.',
     ],
   },

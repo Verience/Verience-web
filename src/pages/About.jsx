@@ -83,7 +83,7 @@ export default function About() {
                 transition={{ duration: 0.5 }}
                 className="eyebrow eyebrow-on-dark eyebrow-accent mb-8"
               >
-                About Verience
+                About Verience Studio
               </motion.p>
 
               <motion.h1
@@ -102,7 +102,7 @@ export default function About() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="body-lead body-lead-on-dark mb-10 max-w-xl"
               >
-                Founded in {SITE.founded} in Delhi, Verience helps brands build credible digital
+                Founded in {SITE.founded} in Delhi, Verience Studio helps brands build credible digital
                 presence through development, marketing, and strategy that actually ships.
               </motion.p>
 
