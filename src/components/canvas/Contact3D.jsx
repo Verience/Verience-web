@@ -1,26 +1,26 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
+function createTunnelPositions(count) {
+  const pos = new Float32Array(count * 3);
+  for (let i = 0; i < count; i++) {
+    const theta = Math.random() * Math.PI * 2;
+    const radius = 2 + Math.random() * 3;
+    const z = (Math.random() - 0.5) * 20;
+
+    pos[i * 3] = Math.cos(theta) * radius;
+    pos[i * 3 + 1] = Math.sin(theta) * radius;
+    pos[i * 3 + 2] = z;
+  }
+  return pos;
+}
+
 function WarpParticles() {
   const ref = useRef();
-  
-  // Generate particles in a cylinder forming a tunnel
   const count = 2000;
-  const positions = useMemo(() => {
-    const pos = new Float32Array(count * 3);
-    for (let i = 0; i < count; i++) {
-      const theta = Math.random() * Math.PI * 2;
-      const radius = 2 + Math.random() * 3;
-      const z = (Math.random() - 0.5) * 20; // Length of tunnel
-      
-      pos[i * 3] = Math.cos(theta) * radius;
-      pos[i * 3 + 1] = Math.sin(theta) * radius;
-      pos[i * 3 + 2] = z;
-    }
-    return pos;
-  }, [count]);
+  const [positions] = useState(() => createTunnelPositions(count));
 
   useFrame((state, delta) => {
     if (ref.current) {

@@ -10,10 +10,9 @@ export const post = {
   excerpt:
     'Most Delhi and NCR business websites look professional but fail to turn visitors into enquiries. Here is what actually blocks lead generation, and what to fix first.',
   seo: {
-    title:
-      'Why Business Websites Don\'t Generate Leads in 2026 | Website Design Delhi',
+    title: 'Why Websites Don\'t Get Leads | Verience Studio',
     description:
-      'Discover why most business websites fail to generate leads in 2026. Practical fixes for Delhi and NCR owners focused on lead generation website design and development.',
+      'Why most business websites fail to generate leads in 2026. Practical fixes for Delhi and NCR owners from Verience Studio on conversion-focused design.',
   },
   keywords: [
     'Website Design Delhi',

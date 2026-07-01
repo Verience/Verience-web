@@ -21,9 +21,9 @@ export const post = {
     'digital marketing Delhi',
   ],
   seo: {
-    title: 'AI Search vs Traditional SEO: SEO Trends 2026 & GEO Guide',
+    title: 'AI Search & SEO 2026 | Verience Studio',
     description:
-      'Discover how AI Search is replacing traditional Google rankings. A practical guide to SEO Trends 2026 and Generative Engine Optimization (GEO) for business owners and marketers.',
+      'How AI search is changing SEO in 2026. A practical guide to GEO and search trends for business owners and marketers from Verience Studio.',
   },
   sections: [
     {

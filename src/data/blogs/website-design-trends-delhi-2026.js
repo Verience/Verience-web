@@ -20,9 +20,9 @@ export const post = {
     'AI website experience',
   ],
   seo: {
-    title: '7 Website Design Trends Delhi Businesses Should Follow in 2026 | Verience',
+    title: 'Web Design Trends 2026 Delhi | Verience Studio',
     description:
-      'Discover Website Design Trends 2026 for Delhi and NCR: fast-loading sites, Modern Website Design, UI UX Design, AI experiences, and conversion-focused layouts that drive leads.',
+      'Seven website design trends Delhi businesses should follow in 2026: speed, UX, AI features, and layouts built to drive leads from Verience Studio.',
   },
   sections: [
     {

@@ -31,9 +31,9 @@ export const MAIN_SERVICES = [
     shortDesc: 'SEO, paid social, content strategy, and campaigns aligned with your business goals.',
     icon: Sparkles,
     seo: {
-      title: 'Digital Marketing Services Delhi NCR',
+      title: 'Digital Marketing Delhi | Verience Studio',
       description:
-        'Digital marketing agency Delhi NCR, strategy, campaigns, Google Ads, social media, and growth marketing for restaurants, real estate, and local brands.',
+        'Digital marketing, Google Ads, and social campaigns from Verience Studio in Delhi NCR. Strategy and growth for restaurants, real estate, and local brands.',
     },
     hero: {
       eyebrow: 'Digital Marketing',
@@ -79,9 +79,9 @@ export const MAIN_SERVICES = [
     shortDesc: 'Responsive websites and web applications built with modern, maintainable technology.',
     icon: Code,
     seo: {
-      title: 'Web Development Company Delhi',
+      title: 'Web Development Delhi | Verience Studio',
       description:
-        'Web development company Delhi, fast, SEO-ready websites and web apps. Modern stacks, clean code, and launches that convert.',
+        'Fast, SEO-ready websites and web apps from Verience Studio in Delhi. Modern stacks, clean code, and launches built to convert.',
     },
     hero: {
       eyebrow: 'Web Development',
@@ -128,9 +128,9 @@ export const MAIN_SERVICES = [
     shortDesc: 'Press outreach, reputation management, and media coverage that builds credibility.',
     icon: Megaphone,
     seo: {
-      title: 'PR Marketing Agency Delhi',
+      title: 'PR Marketing Delhi | Verience Studio',
       description:
-        'PR and media outreach in Delhi, press coverage, reputation management, and stories that build credibility for growing brands.',
+        'PR, press outreach, and reputation management in Delhi from Verience Studio. Stories and media coverage that build long-term credibility.',
     },
     hero: {
       eyebrow: 'PR Marketing',
@@ -171,9 +171,9 @@ export const MAIN_SERVICES = [
     shortDesc: 'Creator partnerships and campaigns that reach the right audience authentically.',
     icon: Users,
     seo: {
-      title: 'Influencer Marketing Agency Delhi',
+      title: 'Influencer Marketing Delhi | Verience Studio',
       description:
-        'Influencer marketing in Delhi, creator partnerships, UGC campaigns, and authentic reach for consumer and lifestyle brands.',
+        'Influencer and creator campaigns from Verience Studio in Delhi. Authentic partnerships, UGC, and reach for lifestyle and consumer brands.',
     },
     hero: {
       eyebrow: 'Influencer Marketing',
@@ -213,9 +213,9 @@ export const MAIN_SERVICES = [
     shortDesc: 'Technical SEO, content clusters, and search visibility that compounds over time.',
     icon: Search,
     seo: {
-      title: 'SEO Strategy & Search Visibility Delhi',
+      title: 'SEO Services Delhi | Verience Studio',
       description:
-        'SEO agency Delhi, technical audits, content clusters, local search, and organic visibility that compounds over time.',
+        'SEO strategy, technical audits, and local search from Verience Studio in Delhi. Organic visibility that compounds over time.',
     },
     hero: {
       eyebrow: 'SEO Strategy',
@@ -265,9 +265,9 @@ export const MAIN_SERVICES = [
     shortDesc: 'Visual identity and messaging systems that feel distinct and intentional.',
     icon: PenTool,
     seo: {
-      title: 'Brand Identity & Design Systems Delhi',
+      title: 'Brand Identity Delhi | Verience Studio',
       description:
-        'Branding agency Delhi, logos, visual identity, messaging, and brand systems for companies that need to stand out.',
+        'Logos, visual identity, and brand systems from Verience Studio in Delhi. Design that works across web, social, print, and sales.',
     },
     hero: {
       eyebrow: 'Brand Identity',
@@ -316,9 +316,9 @@ export const SUB_SERVICES = [
     title: 'Website Design Delhi',
     parentSlug: 'web-development',
     seo: {
-      title: 'Website Design Agency Delhi',
+      title: 'Website Design Delhi | Verience Studio',
       description:
-        'Website design agency Delhi, conversion-focused, mobile-first websites for startups and established brands. Tilak Nagar, West Delhi, and NCR.',
+        'Conversion-focused website design from Verience Studio in Delhi. Mobile-first UX for Tilak Nagar, West Delhi, and NCR businesses.',
     },
     hero: {
       eyebrow: 'Website Design',
@@ -348,9 +348,9 @@ export const SUB_SERVICES = [
     title: 'Social Media Marketing Delhi',
     parentSlug: 'digital-marketing',
     seo: {
-      title: 'Social Media Marketing Agency Delhi',
+      title: 'Social Media Delhi | Verience Studio',
       description:
-        'Social media marketing agency Delhi, reels, content calendars, community management, and campaigns for Instagram, LinkedIn, and more.',
+        'Social media marketing, reels, and content calendars from Verience Studio in Delhi. Instagram, LinkedIn, and platform-native growth.',
     },
     hero: {
       eyebrow: 'Social Media',
@@ -379,9 +379,9 @@ export const SUB_SERVICES = [
     title: 'Google Ads Delhi',
     parentSlug: 'digital-marketing',
     seo: {
-      title: 'Google Ads Agency Delhi',
+      title: 'Google Ads Delhi | Verience Studio',
       description:
-        'Google Ads agency Delhi, search, display, and performance campaigns with tracking, landing pages, and ongoing optimisation.',
+        'Google Ads management from Verience Studio in Delhi. Search campaigns with tracking, landing pages, and ongoing optimisation.',
     },
     hero: {
       eyebrow: 'Google Ads',
@@ -410,9 +410,9 @@ export const SUB_SERVICES = [
     title: 'Branding Agency Delhi',
     parentSlug: 'brand-identity',
     seo: {
-      title: 'Branding Agency Delhi',
+      title: 'Branding Agency Delhi | Verience Studio',
       description:
-        'Branding agency Delhi and West Delhi, identity systems, logos, messaging, and visual guidelines for distinct market presence.',
+        'Branding and identity from Verience Studio in Delhi and West Delhi. Positioning, logos, and guidelines for a distinct market presence.',
     },
     hero: {
       eyebrow: 'Branding',
@@ -441,9 +441,9 @@ export const SUB_SERVICES = [
     title: 'Web Development Delhi',
     parentSlug: 'web-development',
     seo: {
-      title: 'Web Development Company Delhi',
+      title: 'Web Dev Company Delhi | Verience Studio',
       description:
-        'Web development company Delhi, fast, maintainable websites and apps with SEO-ready markup and modern front-end stacks.',
+        'Web development company in Delhi from Verience Studio. Maintainable sites, modern front-ends, and SEO-ready markup.',
     },
     hero: {
       eyebrow: 'Web Development',

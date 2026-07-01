@@ -362,18 +362,21 @@ export default function ProjectDetailContent({ project, clientWork, reels, testi
 
               {activeSocials
                 .filter(({ key }) => key !== 'instagram' || !instagram)
-                .map(({ key, label, icon: Icon }) => (
+                .map((social) => {
+                  const IconComponent = social.icon;
+                  return (
                   <a
-                    key={key}
-                    href={project.social[key]}
+                    key={social.key}
+                    href={project.social[social.key]}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
                   >
-                    <Icon size={16} />
-                    {label}
+                    <IconComponent size={16} />
+                    {social.label}
                   </a>
-                ))}
+                  );
+                })}
             </div>
           )}
 

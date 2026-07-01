@@ -1,15 +1,19 @@
+import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import FaqAccordion from '../components/ui/FaqAccordion';
-import Hero3D from '../components/canvas/Hero3D';
+import SeoArticle from '../components/seo/SeoArticle';
 import Marquee from '../components/ui/Marquee';
 import ClientMarquee from '../components/ui/ClientMarquee';
 import ProjectReelCarousel from '../components/ui/ProjectReelCarousel';
 import { featuredProjects, projectReels } from '../data/projectDetails';
 import { projectTestimonials } from '../data/testimonials';
 import { getFaqStructuredData, homeFaqs } from '../data/faq';
+import { homeSeoSections } from '../data/homeSeoContent';
+
+const Hero3D = lazy(() => import('../components/canvas/Hero3D'));
 
 const services = [
   {
@@ -45,7 +49,9 @@ export default function Home() {
     <div className="overflow-hidden">
       {/* Hero */}
       <section className="relative bg-[var(--color-canvas-night)] text-white min-h-screen flex items-center overflow-hidden">
-        <Hero3D />
+        <Suspense fallback={null}>
+          <Hero3D />
+        </Suspense>
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 pt-36 pb-28 md:pt-44 md:pb-36 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
@@ -207,7 +213,9 @@ export default function Home() {
                     {project.image ? (
                       <img
                         src={project.image}
-                        alt={project.title}
+                        alt={`${project.title} project by Verience Studio`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
                       />
                     ) : (
@@ -271,6 +279,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SeoArticle
+        eyebrow="Verience Studio"
+        title="Creative digital agency"
+        titleAccent="based in Delhi."
+        sections={homeSeoSections}
+        className="section-pad border-t border-[var(--color-hairline)] bg-white"
+      />
 
       {/* FAQ */}
       <section className="section-pad bg-white border-t border-[var(--color-hairline)]">
