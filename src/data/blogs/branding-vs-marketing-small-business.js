@@ -20,9 +20,9 @@ export const post = {
     'digital marketing for small business',
   ],
   seo: {
-    title: 'Branding vs Marketing: What Small Businesses Should Invest In First',
+    title: 'Branding vs Marketing Guide | Verience Studio',
     description:
-      'Should a small business invest in branding or marketing first? A practical guide for Delhi owners on brand identity design, when to hire a branding agency, and how to grow without wasting budget.',
+      'Should a small business invest in branding or marketing first? A practical guide for Delhi owners on identity, budget, and growth from Verience Studio.',
   },
   sections: [
     {

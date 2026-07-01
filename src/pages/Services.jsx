@@ -2,9 +2,11 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Button from '../components/ui/Button';
+import SeoArticle from '../components/seo/SeoArticle';
 import { getMainServices } from '../data/servicePages';
 import ServicePageLayout, { ServiceArticle } from '../components/services/ServicePageLayout';
 import { getServiceBySlug } from '../data/servicePages';
+import { servicesSeoSections } from '../data/servicesSeoContent';
 
 export default function Services() {
   const services = getMainServices();
@@ -81,6 +83,14 @@ export default function Services() {
           })}
         </div>
       </div>
+
+      <SeoArticle
+        eyebrow="What we do"
+        title="Branding, design, and"
+        titleAccent="marketing in one place."
+        sections={servicesSeoSections}
+        className="section-pad border-t border-[var(--color-hairline)] bg-white"
+      />
 
       <section className="section-dark section-pad relative overflow-hidden border-t border-white/5">
         <div

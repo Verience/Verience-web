@@ -1,38 +1,38 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Line, Sphere, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 
-function NetworkNodes() {
-  const groupRef = useRef();
-  
-  // Generate random points for the network
-  const points = useMemo(() => {
-    const pts = [];
-    for (let i = 0; i < 20; i++) {
-      pts.push(
-        new THREE.Vector3(
-          (Math.random() - 0.5) * 8,
-          (Math.random() - 0.5) * 8,
-          (Math.random() - 0.5) * 8
-        )
-      );
-    }
-    return pts;
-  }, []);
+function createNetworkPoints(count) {
+  const pts = [];
+  for (let i = 0; i < count; i++) {
+    pts.push(
+      new THREE.Vector3(
+        (Math.random() - 0.5) * 8,
+        (Math.random() - 0.5) * 8,
+        (Math.random() - 0.5) * 8
+      )
+    );
+  }
+  return pts;
+}
 
-  // Generate lines connecting nearby points
-  const lines = useMemo(() => {
-    const lns = [];
-    for (let i = 0; i < points.length; i++) {
-      for (let j = i + 1; j < points.length; j++) {
-        if (points[i].distanceTo(points[j]) < 4) {
-          lns.push([points[i], points[j]]);
-        }
+function createNetwork() {
+  const points = createNetworkPoints(20);
+  const lines = [];
+  for (let i = 0; i < points.length; i++) {
+    for (let j = i + 1; j < points.length; j++) {
+      if (points[i].distanceTo(points[j]) < 4) {
+        lines.push([points[i], points[j]]);
       }
     }
-    return lns;
-  }, [points]);
+  }
+  return { points, lines };
+}
+
+function NetworkNodes() {
+  const groupRef = useRef();
+  const [{ points, lines }] = useState(createNetwork);
 
   useFrame((state) => {
     if (groupRef.current) {

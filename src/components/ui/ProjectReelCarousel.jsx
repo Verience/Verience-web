@@ -186,6 +186,7 @@ export default function ProjectReelCarousel({ reels }) {
   const goTo = useCallback(
     (index) => {
       if (!total) return;
+      setActiveHovered(false);
       setActiveIndex((index + total) % total);
     },
     [total]
@@ -195,13 +196,10 @@ export default function ProjectReelCarousel({ reels }) {
   const goPrev = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo]);
 
   useEffect(() => {
-    setActiveHovered(false);
-  }, [activeIndex]);
-
-  useEffect(() => {
     if (paused || total <= 1) return undefined;
 
     const timer = window.setInterval(() => {
+      setActiveHovered(false);
       setActiveIndex((current) => (current + 1) % total);
     }, AUTOPLAY_MS);
 

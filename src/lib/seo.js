@@ -1,5 +1,10 @@
 import { getAllKeywords, SEO_KEYWORDS, SEO_LOCATION } from './keywords';
 
+export const SEO_LIMITS = {
+  title: 60,
+  description: 155,
+};
+
 export const SITE = {
   name: 'Verience Media and Technology',
   brandName: 'Verience Studio',
@@ -11,44 +16,51 @@ export const SITE = {
   locale: 'en_IN',
   defaultImage: '/favicon.png',
   defaultDescription:
-    'Verience Studio is a website design agency and web development company in Delhi, also a branding, social media marketing, and Google Ads agency helping brands ship websites and campaigns since 2025.',
+    'Verience Studio is a Delhi agency for web design, branding, social media, and digital marketing. Websites, campaigns, and creative strategy since 2025.',
   social: {
     instagram: 'https://www.instagram.com/veriencestudio/',
+    facebook: 'https://www.facebook.com/people/Verience-Studio/61591026191470/',
     linkedin: 'https://www.linkedin.com/company/verience/',
     whatsapp:
       'https://wa.me/918368759792?text=Hi,%20I%20came%20across%20your%20business%20and%20would%20love%20to%20connect.%20I%E2%80%99m%20currently%20looking%20for%20guidance%20and%20insights%20on%20growing%20my%20business,%20and%20I%20feel%20a%20discussion%20with%20you%20could%20be%20valuable.',
+  },
+  address: {
+    locality: 'Delhi',
+    region: 'Delhi',
+    country: 'India',
+    countryCode: 'IN',
   },
 };
 
 const PAGE_SEO = {
   '/': {
-    title: 'Verience Studio | Website Design & Web Development Agency Delhi',
+    title: 'Verience Studio | Web Design Agency Delhi',
     description: SITE.defaultDescription,
   },
   '/about': {
-    title: 'About Verience Studio | Branding & Digital Agency Delhi',
+    title: 'About Verience Studio | Delhi Agency',
     description:
-      'Verience Studio is a Delhi media and technology studio and branding agency helping companies build credible digital presence through web development, marketing, and strategy since 2025.',
+      'Verience Studio is a Delhi media and technology studio for branding, web development, social media, and marketing strategy. Credible digital presence since 2025.',
   },
   '/services': {
-    title: 'Services | Verience Studio Digital Marketing Agency Delhi NCR',
+    title: 'Digital Services | Verience Studio',
     description:
-      'Explore six core services from Verience Studio: digital marketing, web development, PR, influencer marketing, SEO, and brand identity in Delhi NCR.',
+      'Web design, branding, SEO, social media, and Google Ads from Verience Studio in Delhi NCR. Six core services, one accountable creative team.',
   },
   '/projects': {
-    title: 'Projects | Verience Studio Website Design & Social Media Delhi',
+    title: 'Client Work | Verience Studio Delhi',
     description:
-      'Verience Studio portfolio: website design, social media reels, branding, and campaigns for clients across Delhi NCR, Tilak Nagar, and West Delhi.',
+      'Verience Studio portfolio: websites, social reels, branding, and campaigns for clients across Delhi NCR, Tilak Nagar, and West Delhi.',
   },
   '/contact': {
-    title: 'Contact Verience Studio | Website Design Tilak Nagar & West Delhi',
+    title: 'Contact Verience Studio | Delhi',
     description:
-      'Contact Verience Studio for website design in Tilak Nagar, branding in West Delhi, restaurant and real estate marketing across Delhi NCR. Reply within one business day.',
+      'Contact Verience Studio in Delhi for web design, branding, and marketing. Email hello@veriencestudio.com or call +91 8368759792. Reply within one business day.',
   },
   '/blog': {
-    title: 'Blog | Verience Studio Web Design, SEO & Branding Insights',
+    title: 'Blog | Verience Studio',
     description:
-      'Articles on website design, lead generation, AI search, SEO trends 2026, branding, and UI UX design for Delhi and NCR businesses.',
+      'Guides on website design, SEO, branding, and digital growth for Delhi and NCR businesses from Verience Studio.',
   },
 };
 
@@ -90,11 +102,30 @@ function toAbsoluteUrl(path) {
   return `${SITE.url}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
-function formatTitle(title) {
-  if (title.includes(SITE.brandName) || title.includes(SITE.shortName)) {
-    return title;
+export function clampMetaText(text, maxLength) {
+  if (!text || text.length <= maxLength) return text;
+
+  const trimmed = text.slice(0, maxLength);
+  const lastSpace = trimmed.lastIndexOf(' ');
+
+  if (lastSpace > maxLength * 0.55) {
+    return trimmed.slice(0, lastSpace).trim();
   }
-  return `${title} | ${SITE.brandName}`;
+
+  return trimmed.trim();
+}
+
+export function formatTitle(title) {
+  const withBrand =
+    title.includes(SITE.brandName) || title.includes(SITE.shortName)
+      ? title
+      : `${title} | ${SITE.brandName}`;
+
+  return clampMetaText(withBrand, SEO_LIMITS.title);
+}
+
+export function formatDescription(description) {
+  return clampMetaText(description || SITE.defaultDescription, SEO_LIMITS.description);
 }
 
 function buildServiceOffers() {
@@ -137,10 +168,10 @@ export function getStructuredDataGraph() {
             name: SEO_LOCATION.country,
           },
         },
-        sameAs: [SITE.social.instagram, SITE.social.linkedin],
+        sameAs: [SITE.social.instagram, SITE.social.facebook, SITE.social.linkedin],
       },
       {
-        '@type': 'ProfessionalService',
+        '@type': 'LocalBusiness',
         '@id': LOCAL_BUSINESS_ID,
         name: SITE.brandName,
         alternateName: [SITE.name, SITE.shortName],
@@ -157,9 +188,17 @@ export function getStructuredDataGraph() {
         },
         address: {
           '@type': 'PostalAddress',
-          addressLocality: SEO_LOCATION.city,
-          addressRegion: SEO_LOCATION.region,
-          addressCountry: SEO_LOCATION.geoRegion.split('-')[0],
+          addressLocality: SITE.address.locality,
+          addressRegion: SITE.address.region,
+          addressCountry: SITE.address.countryCode,
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: SITE.phone,
+          email: SITE.email,
+          contactType: 'customer service',
+          areaServed: SEO_LOCATION.country,
+          availableLanguage: ['English', 'Hindi'],
         },
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
@@ -188,24 +227,25 @@ export function getStructuredDataGraph() {
 
 export function getPageSeo(pathname) {
   const config = PAGE_SEO[pathname] ?? {
-    title: SITE.name,
+    title: SITE.brandName,
     description: SITE.defaultDescription,
   };
 
   return {
-    title: config.title,
-    description: config.description,
+    title: formatTitle(config.title),
+    description: formatDescription(config.description),
     path: pathname,
     image: SITE.defaultImage,
   };
 }
 
 export function getProjectSeo(project) {
-  const description = project.tagline || project.description?.slice(0, 160) || SITE.defaultDescription;
+  const rawDescription =
+    project.tagline || project.description?.slice(0, 160) || SITE.defaultDescription;
 
   return {
-    title: `${project.title} Case Study`,
-    description,
+    title: formatTitle(`${project.title} Case Study`),
+    description: formatDescription(rawDescription),
     path: `/projects/${project.slug}`,
     image: project.coverImage || SITE.defaultImage,
     type: 'article',
@@ -214,8 +254,8 @@ export function getProjectSeo(project) {
 
 export function getServiceSeo(service) {
   return {
-    title: service.seo.title,
-    description: service.seo.description,
+    title: formatTitle(service.seo.title),
+    description: formatDescription(service.seo.description),
     path: `/services/${service.slug}`,
     image: SITE.defaultImage,
   };
@@ -223,8 +263,8 @@ export function getServiceSeo(service) {
 
 export function getBlogSeo(post) {
   return {
-    title: post.seo.title,
-    description: post.seo.description,
+    title: formatTitle(post.seo.title),
+    description: formatDescription(post.seo.description),
     path: `/blog/${post.slug}`,
     image: SITE.defaultImage,
     type: 'article',
@@ -247,10 +287,11 @@ export function applyPageSeo({ title, description, path = '/', image, type = 'we
   const canonicalUrl = `${SITE.url}${path === '/' ? '' : path}`;
   const imageUrl = toAbsoluteUrl(image);
   const pageTitle = formatTitle(title);
+  const pageDescription = formatDescription(description);
 
   document.title = pageTitle;
 
-  upsertMeta('name', 'description', description);
+  upsertMeta('name', 'description', pageDescription);
   upsertMeta('name', 'robots', 'index, follow');
   applyGeoMeta();
   applyKeywordMeta();
@@ -258,12 +299,12 @@ export function applyPageSeo({ title, description, path = '/', image, type = 'we
   upsertMeta('property', 'og:type', type);
   upsertMeta('property', 'og:url', canonicalUrl);
   upsertMeta('property', 'og:title', pageTitle);
-  upsertMeta('property', 'og:description', description);
+  upsertMeta('property', 'og:description', pageDescription);
   upsertMeta('property', 'og:image', imageUrl);
   upsertMeta('property', 'og:locale', SITE.locale);
   upsertMeta('name', 'twitter:card', 'summary_large_image');
   upsertMeta('name', 'twitter:title', pageTitle);
-  upsertMeta('name', 'twitter:description', description);
+  upsertMeta('name', 'twitter:description', pageDescription);
   upsertMeta('name', 'twitter:image', imageUrl);
 
   upsertLink('canonical', canonicalUrl);

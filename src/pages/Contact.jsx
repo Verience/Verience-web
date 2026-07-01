@@ -4,6 +4,7 @@ import {
   ArrowUpRight,
   CheckCircle2,
   Clock3,
+  Facebook,
   Instagram,
   Linkedin,
   Mail,
@@ -47,6 +48,13 @@ const contactChannels = [
     value: '@veriencestudio',
     href: SITE.social.instagram,
     hint: 'Behind-the-scenes and recent work',
+  },
+  {
+    icon: Facebook,
+    label: 'Facebook',
+    value: 'Verience Studio',
+    href: SITE.social.facebook,
+    hint: 'Updates, reels, and studio news',
   },
   {
     icon: Linkedin,

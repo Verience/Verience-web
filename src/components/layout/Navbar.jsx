@@ -28,9 +28,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <header
@@ -113,6 +111,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
+                  onClick={closeMobileMenu}
                   className={clsx(
                     'text-base py-1',
                     isDark ? 'text-white/75 hover:text-white' : 'text-[color:var(--text-muted)] hover:text-[color:var(--text-color)]'
@@ -125,6 +124,7 @@ export default function Navbar() {
                 to="/contact"
                 variant={isDark ? 'accent' : 'primary'}
                 className="mt-2 w-full !text-sm"
+                onClick={closeMobileMenu}
               >
                 Let's talk
               </Button>

@@ -28,9 +28,14 @@ export default function Blog() {
           <h1 className="display-section mb-6">
             Insights for <span className="text-accent">growing brands.</span>
           </h1>
-          <p className="body-lead">
+          <p className="body-lead mb-8">
             Deep guides on website design, SEO, branding, and digital growth for Delhi and NCR
-            businesses.
+            businesses from Verience Studio.
+          </p>
+          <p className="text-sm leading-relaxed text-[color:var(--text-muted)] max-w-2xl">
+            Our blog covers web design, social media strategy, branding decisions, and search
+            visibility for founders and marketing teams. Practical advice from a Delhi creative
+            agency, not generic agency fluff.
           </p>
         </motion.div>
 
